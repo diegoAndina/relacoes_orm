@@ -1,0 +1,28 @@
+{
+    "fields": [
+        {
+            "name": "nome",
+            "type": "string"
+        },
+        {
+            "name": "cpf",
+            "type": "char"
+        },
+        {
+            "name": "salario",
+            "type": "float"
+        },
+        {
+            "name": "situacao",
+            "type": "boolean"
+        },
+        {
+            "name": "data_contratacao",
+            "type": "date"
+        },
+        {
+            "name": "data_demissao",
+            "type": "date"
+        }
+    ]
+}

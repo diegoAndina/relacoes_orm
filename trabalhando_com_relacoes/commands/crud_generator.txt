@@ -1,0 +1,69 @@
+INSTALA O GERADOR DE CRUD
+
+composer require appzcoder/crud-generator --dev
+
+php artisan vendor:publish --provider="Appzcoder\CrudGenerator\CrudGeneratorServiceProvider"
+-----------------------------------------------------------------------------------
+
+CONFIGURA ARQUIVO
+
+ 'providers' => [
+    //...
+
+    Collective\Html\HtmlServiceProvider::class,
+],
+
+'aliases' => [
+    //...
+
+    'Form' => Collective\Html\FormFacade::class,
+    'HTML' => Collective\Html\HtmlFacade::class,
+],
+
+-----------------------------------------------------------------------------------
+                                          USANDO A APLICAÇÃO
+
+php artisan crud:generate Posts --fields_from_file="/path/to/fields.json" --view-path=admin --controller-namespace=App\\Http\\Controllers\\Admin --route-group=admin --form-helper=html
+
+
+php artisan crud:generate Funcionario --fields_from_file="paths_crud/funcionario.json" --view-path=admin --controller-namespace=App\\Http\\Controllers\\Admin --route-group=admin --form-helper=html
+
+
+
+--------------------------------------------------------------------------------------------------------------
+Form Field Types:
+text
+textarea
+password
+email
+number
+date
+datetime
+time
+radio
+select
+file
+Migration Field Types:
+string
+char
+varchar
+date
+datetime
+time
+timestamp
+text
+mediumtext
+longtext
+json
+jsonb
+binary
+integer
+bigint
+mediumint
+tinyint
+smallint
+boolean
+decimal
+double
+float
+enum
