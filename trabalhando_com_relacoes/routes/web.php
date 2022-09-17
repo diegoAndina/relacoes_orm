@@ -27,4 +27,4 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::resource('admin/funcionario', 'App\\Http\\Controllers\\Admin\FuncionarioController');
+Route::resource('admin/funcionario', 'App\Http\Controllers\Admin\FuncionarioController');

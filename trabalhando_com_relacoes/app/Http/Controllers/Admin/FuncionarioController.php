@@ -1,6 +1,6 @@
 <?php
 
-namespace App\\Http\\Controllers\\Admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -17,6 +17,7 @@ class FuncionarioController extends Controller
      */
     public function index(Request $request)
     {
+        // dd('estou na adim funcionario index');
         $keyword = $request->get('search');
         $perPage = 25;
 
@@ -54,9 +55,9 @@ class FuncionarioController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $requestData = $request->all();
-        
+
         Funcionario::create($requestData);
 
         return redirect('admin/funcionario')->with('flash_message', 'Funcionario added!');
@@ -100,9 +101,9 @@ class FuncionarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $requestData = $request->all();
-        
+
         $funcionario = Funcionario::findOrFail($id);
         $funcionario->update($requestData);
 
